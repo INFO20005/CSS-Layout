@@ -118,7 +118,8 @@ nav > div > img{
 }
 
 .Group-4  > .product-info{
-  order:4;    
+  order:4; 
+  margin-bottom:20px;   
 }
 
 .Group-4 > .description {
