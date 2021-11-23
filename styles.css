@@ -27,7 +27,7 @@ nav {
   align-items: center;
 
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); 
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
@@ -59,13 +59,16 @@ nav > div > img{
    
 
 .Group-1{
-  margin-top: 100px; /* Nav bar size */
-}
- 
-.Group-1, .Group-2{
+  margin-top: 100px;
   display:flex;
   justify-content:space-evenly;
-  flex-wrap:wrap;
+  flex-wrap:wrap; 
+}
+
+.Group-2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
 }
   
 .product-card {
@@ -80,11 +83,7 @@ nav > div > img{
 .Group-1 > .product-card {
   width:400px;
 }
-  
-.Group-2 > .product-card {
-  max-width:400px;
-  width:40%;
-}
+
 
 
 .Group-3 {
@@ -105,60 +104,52 @@ nav > div > img{
 }
  
 .Group-4 {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
   background-color:#f6f6f6;
+
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "shoeImage description"
+  "productInfo productInfo";
+  
+  padding-bottom: 20px;
 }
 
 .Group-4 > img{
-  max-width: 400px;
+  grid-area: shoeImage;
+  justify-self: end;
+
+  min-width:200px;
+  max-width:600px;
   width:100%;
-  order:1;
 }
 
 .Group-4  > .product-info{
-  order:4; 
-  margin-bottom:20px;   
+  grid-area: productInfo;
+  justify-self: center;
 }
 
 .Group-4 > .description {
-  order:2;
-  width: 470px;
-  margin: 0 40px 0 40px;
-  display: flex;
-  align-items:center;
+  grid-area: description;
+  justify-self: start;
+
+  max-width: 470px;
+  margin: 0 20px 0 20px;
+  align-self:center;
 }
-
-.Group-4 > .break {
-  order:3;
-  flex-basis: 100%;
-}
- 
-
-
 
 footer{
-  margin-top:10px;
-  height:400px;
-  width:auto;
+  height:100vh;
+  width:100%;
   background-Color:Black;
-  color : white;
   display:flex;
-  flex-direction: column;
   align-items:center;
   justify-content:center;
 }
-
+  
 footer > img{
-  width:200px;
-  padding:19px;
+  height:10%;
 } 
-
-footer > h1 {
-  font-size:5em;
-  line-height: 0px;
-}
 
 
 
@@ -183,8 +174,9 @@ h6{
   font-weight:400;
   padding:0 0 10px 0;
   margin:0 0 0 0;
-  vertical-align:baseline
+  vertical-align:baseline;
 }
+
 h7{
   font-family: "Helvetica Neue","Roboto","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size:16px;
